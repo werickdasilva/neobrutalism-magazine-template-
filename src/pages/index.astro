@@ -1,123 +1,314 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/Navbar.astro";
+import Container from "@components/Container.astro";
+import Editor from "@components/Editor.astro";
+import Share from "@components/Share.astro";
+import ArrowRight from "@components/icons/ArrowRight.astro";
+import Facebook from "@components/icons/Facebook.astro";
+import Twitter from "@components/icons/Twitter.astro";
+import Youtube from "@components/icons/Youtube.astro";
+import Tiktok from "@components/icons/Tiktok.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<svg
-			class="astro-a"
-			width="495"
-			height="623"
-			viewBox="0 0 495 623"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-			aria-hidden="true"
-		>
-			<path
-				fill-rule="evenodd"
-				clip-rule="evenodd"
-				d="M167.19 364.254C83.4786 364.254 0 404.819 0 404.819C0 404.819 141.781 19.4876 142.087 18.7291C146.434 7.33701 153.027 0 162.289 0H332.441C341.703 0 348.574 7.33701 352.643 18.7291C352.92 19.5022 494.716 404.819 494.716 404.819C494.716 404.819 426.67 364.254 327.525 364.254L264.41 169.408C262.047 159.985 255.147 153.581 247.358 153.581C239.569 153.581 232.669 159.985 230.306 169.408L167.19 364.254ZM160.869 530.172C160.877 530.18 160.885 530.187 160.894 530.195L160.867 530.181C160.868 530.178 160.868 530.175 160.869 530.172ZM136.218 411.348C124.476 450.467 132.698 504.458 160.869 530.172C160.997 529.696 161.125 529.242 161.248 528.804C161.502 527.907 161.737 527.073 161.917 526.233C165.446 509.895 178.754 499.52 195.577 500.01C211.969 500.487 220.67 508.765 223.202 527.254C224.141 534.12 224.23 541.131 224.319 548.105C224.328 548.834 224.337 549.563 224.347 550.291C224.563 566.098 228.657 580.707 237.264 593.914C245.413 606.426 256.108 615.943 270.749 622.478C270.593 621.952 270.463 621.508 270.35 621.126C270.045 620.086 269.872 619.499 269.685 618.911C258.909 585.935 266.668 563.266 295.344 543.933C298.254 541.971 301.187 540.041 304.12 538.112C310.591 533.854 317.059 529.599 323.279 525.007C345.88 508.329 360.09 486.327 363.431 457.844C364.805 446.148 363.781 434.657 359.848 423.275C358.176 424.287 356.587 425.295 355.042 426.275C351.744 428.366 348.647 430.33 345.382 431.934C303.466 452.507 259.152 455.053 214.03 448.245C184.802 443.834 156.584 436.019 136.218 411.348Z"
-				fill="url(#paint0_linear_1805_24383)"></path>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+	<Navbar />
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+	<h1 class="text-5xl font-semibold text-center my-8">
+		Stand up for Somalia
+	</h1>
+	<hr class="border-cus_gray" />
+	<Container>
+		<Editor />
+		<Share />
+	</Container>
+	<hr class="border-black mb-8" />
+	<Container>
+		<div class="mt-6">
+			<img src="/img/img-new-01-mobile.jpg" alt="image 01" />
+			<h2 class="text-2xl font-semibold mt-6">
+				People are dying of hunger... there’s no water’
+			</h2>
+			<div>
+				<p class="my-6 font-normal text-lg text-justify">
+					In Somalia, more than 6 million people are in need of food
+					assistance – more than half the population. But even inside
+					the camps, food is scarce.
+				</p>
+			</div>
+		</div>
+		<hr class="border-black my-12" />
+		<div class="mt-6">
+			<img src="/img/img-new-02-mobile.jpg" alt="image 02" />
+			<h2 class="text-2xl font-semibold mt-6">
+				Let’s help them. I know you can
+			</h2>
+			<div>
+				<p class="my-6 font-normal text-lg text-justify">
+					Girls, boys and families are experiencing food insecurity,
+					higher food and other commodity prices coupled with a
+					decrease in remittances, strained public services and
+					significant protection challenges.
+				</p>
+				<p class="my-6 font-normal text-lg text-justify">
+					UNICEF appeals for US$177 million to provide humanitarian
+					services to 1.3 million people, including 826,000 children
+					in Somalia.
+				</p>
+			</div>
+		</div>
+		<hr class="border-black my-12" />
+		<div class="my-6">
+			<img src="/img/img-new-03-mobile.jpg" alt="image 03" />
+			<h2 class="text-2xl font-semibold mt-6">Still ‘neglected’</h2>
+			<div>
+				<p class="my-6 font-normal text-lg text-justify">
+					“The situation is critical in Somalia. People are dying of
+					hunger and there is no water,” said Mogadishu resident Noor
+					Ibrahim, who fled his home to seek help at a camp.
+				</p>
+
+				<p class="my-6 font-normal text-lg text-justify">
+					“Al-Shabaab blocks the roads, there is no access for food
+					aid, the Shabaab steal food as well.
+				</p>
+			</div>
+		</div>
+		<hr class="border-black my-12" />
+	</Container>
+
+	<div>
+		<img src="/img/img-video.jpg" alt="video" />
+		<Container>
+			<span class="block text-center font-bold text-4xl">“</span>
+			<h2 class="text-2xl text-center font-semibold mt-6">
+				We didn’t eat this morning, we haven’t had a meal in ten days.
+				We are still waiting for food.
+			</h2>
+			<p class="my-6 font-normal text-lg text-center">
+				The past days have been cruel on Fatumata and her two young
+				children – forced to walk over 100 miles in search of food,
+				water and sanctuary.
+			</p>
+			<p class="my-6 font-normal text-lg text-center">
+				Her three-year-old daughter Shankaron sits on her lap, eyes
+				blank and scared. It is a look that is far too common in these
+				parts.
+			</p>
+		</Container>
+	</div>
+
+	<div class="bg-card-news text-white mt-24">
+		<h2 class="ml-5 py-4 text-[66px] font-semibold">Related</h2>
+		<hr class="border-cus_gray" />
+		<img class="mt-32" src="/img/earth.jpg" alt="" />
+		<Container>
+			<span class="text-base font-normal uppercase block mt-6">World</span>
+			<h3 class="text-[28px] font-semibold text-left mt-5 mb-6">
+				New images show intriguing Perseverance discovery on Mars
+			</h3>
+			<p>
+				Scientists identified mysterious diamonds that likely originated
+				from a dwarf planet that once existed in our solar system.
+			</p>
+			<div class="mt-8 flex justify-between">
+				<span>Continue Reading</span>
+				<ArrowRight />
+			</div>
+		</Container>
+
+		<hr class="border-cus_gray my-12" />
+
+		<Container>
+			<div>
+				<img src="/img/img-new-04.jpg" alt="" />
+				<h2 class="text-2xl font-semibold mt-6 mb-4">
+					What Ukraine texted to russian soldiers
+				</h2>
+				<p class="text-xl font-normal">
+					Authorities in the Russian-occupied areas of Ukraine that
+					held so-called referendums say...
+				</p>
+			</div>
+		</Container>
+
+		<hr class="border-cus_gray my-12" />
+
+		<Container>
+			<div>
+				<img src="/img/img-new-05.jpg" alt="" />
+				<h2 class="text-2xl font-semibold mt-6 mb-4">
+					Fighter jets escort Singapore Airlines plane after bomb hoax
+				</h2>
+				<p class="text-xl font-normal">
+					Two air force fighter jets escorted a Singapore Airlines
+					plane traveling...
+				</p>
+			</div>
+		</Container>
+
+		<hr class="border-cus_gray my-12" />
+		<Container>
+			<div>
+				<img src="/img/img-new-06.jpg" alt="" />
+				<h2 class="text-2xl font-semibold mt-6 mb-4">
+					Scientists are listening to glaciers to discover the secrets
+					of the oceans
+				</h2>
+				<p class="text-xl font-normal mb-[70px]">
+					Two air force fighter jets escorted a Singapore Airlines
+					plane traveling...
+				</p>
+			</div>
+		</Container>
+		<hr class="border-cus_gray" />
+		<Container>
+			<button
+				class="my-6 px-8 py-4 text-xl font-medium bg-white text-black w-full"
+			>
+				See All</button
+			>
+		</Container>
+	</div>
+	<div class="mt-16 mb-[88px]">
+		<Container>
+			<h3 class="text-[28px] text-center font-semibold mt-16 mb-5">
+				Subscribe to our newsletter
+			</h3>
+			<p class="text-lg font-normal text-center mb-8">
+				Be the first to know about the biggest stories as they break
+			</p>
+			<input
+				type="email"
+				placeholder="Email address"
+				class="px-5 py-4 mb-3 w-full text-lg border border-black"
+			/>
+			<button
+				class="py-[14px] px-5 w-full text-lg font-medium bg-black text-white"
+				>Subscribe</button
+			>
+			<p class="mt-6 text-sm font-normal text-center">
+				By clicking Subscribe, you indicate that you agree to Hypnosis
+				Terms and Conditions and Data Use Privacy Policy
+			</p>
+		</Container>
+	</div>
+
+	<footer class="bg-footer py-10">
+		<Container>
+			<div class="flex gap-x-[76px]">
+				<div>
+					<h4 class="text-lg font-bold mb-4">World</h4>
+					<ul>
+						<li class="leading-8">Africa</li>
+						<li class="leading-8">Americas</li>
+						<li class="leading-8">Asia</li>
+						<li class="leading-8">Australia</li>
+						<li class="leading-8">China</li>
+						<li class="leading-8">Europe</li>
+						<li class="leading-8">India</li>
+						<li class="leading-8">Middle East</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-lg font-bold mb-4">Politics</h4>
+					<ul>
+						<li class="leading-8">Ukraine</li>
+						<li class="leading-8">Europe</li>
+						<li class="leading-8">Facts First</li>
+						<li class="leading-8">2022 Midterms</li>
+					</ul>
+				</div>
+			</div>
+
+			<hr class="border-black my-8" />
+
+			<div class="flex gap-x-[76px]">
+				<div>
+					<h4 class="text-lg font-bold mb-4">Business</h4>
+					<ul>
+						<li class="leading-8">Markets</li>
+						<li class="leading-8">Tech</li>
+						<li class="leading-8">Media</li>
+						<li class="leading-8">Success</li>
+						<li class="leading-8">Perspectives</li>
+						<li class="leading-8">Videos</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-lg font-bold mb-4">Tech</h4>
+					<ul>
+						<li class="leading-8">Innovate</li>
+						<li class="leading-8">Gadget</li>
+						<li class="leading-8">Foreseeable Future</li>
+						<li class="leading-8">Mission: Ahead</li>
+						<li class="leading-8">Upstarts</li>
+						<li class="leading-8">Work Transformed</li>
+						<li class="leading-8">Innovative Cities</li>
+					</ul>
+				</div>
+			</div>
+
+			<hr class="border-black my-8" />
+			<div class="flex gap-x-[76px]">
+				<div>
+					<h4 class="text-lg font-bold mb-4">Sports</h4>
+					<ul>
+						<li class="leading-8">Football</li>
+						<li class="leading-8">Tennis</li>
+						<li class="leading-8">Golf</li>
+						<li class="leading-8">Olympics</li>
+						<li class="leading-8">US Sports</li>
+						<li class="leading-8">Climbing</li>
+						<li class="leading-8">Motorsport</li>
+						<li class="leading-8">Esports</li>
+					</ul>
+				</div>
+				<div>
+					<h4 class="text-lg font-bold mb-4">Culture</h4>
+					<ul>
+						<li class="leading-8">Arts</li>
+						<li class="leading-8">Design</li>
+						<li class="leading-8">Fashion</li>
+						<li class="leading-8">Architecture</li>
+						<li class="leading-8">Luxury</li>
+						<li class="leading-8">Beauty</li>
+						<li class="leading-8">Video</li>
+					</ul>
+				</div>
+			</div>
+			<hr class="border-black my-8" />
+			<div>
+				<h3 class="text-2xl font-semibold text-center mb-4">
+					Hypnosis
+				</h3>
+				<p class="text-sm font-normal text-center">
+					© 2022 Hypnosis Corporation Inc. All rights reserved.
+				</p>
+				<div
+					class="flex items-center gap-x-7 w-[200px] mx-auto mt-9 mb-7"
+				>
+					<div class="w-7">
+						<Facebook />
+					</div>
+					<div class="w-7">
+						<Twitter />
+					</div>
+					<div class="w-7">
+						<Youtube />
+					</div>
+					<div class="w-7">
+						<Tiktok />
+					</div>
+				</div>
+				<div class="flex gap-x-3 flex-wrap justify-center w-full">
+					<span>Terms & Conditions</span>
+					<span>Cookies</span>
+					<span>Ads</span>
+					<span>About us</span>
+					<span>Join our team</span>
+				</div>
+			</div>
+		</Container>
+	</footer>
+</Layout>

@@ -1,0 +1,13 @@
+---
+export type ShareButtonProps = {
+    text: string;
+};
+const { text } = Astro.props;
+---
+
+<button
+    class="flex items-center gap-x-[6px] px-[14px] py-2 border border-cus_gray"
+>
+    <slot />
+    <span class="text-sm font-medium">{text}</span>
+</button>
