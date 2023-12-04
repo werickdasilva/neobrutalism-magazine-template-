@@ -14,9 +14,11 @@ export default {
 			backgroundColor: {
 				'card-news': '#161616',
 				'footer': '#F1F1F1'
+				
 			},
 			borderColor: {
-				cus_gray: '#C7C7C7'
+				cus_gray: '#C7C7C7',
+				'gray-light': '#D2D2D2'
 			}
 		},
 	},

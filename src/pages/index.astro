@@ -14,157 +14,220 @@ import Tiktok from "@components/icons/Tiktok.astro";
 <Layout title="Welcome to Astro.">
 	<Navbar />
 
-	<h1 class="text-5xl font-semibold text-center my-8">
+	<h1 class="text-5xl md:text-[116px] font-semibold text-center my-8">
 		Stand up for Somalia
 	</h1>
 	<hr class="border-cus_gray" />
 	<Container>
-		<Editor />
-		<Share />
+		<div
+			class="sm:mx-auto sm:w-[420px] md:w-full max-w-6xl flex flex-col lg:flex-row lg:justify-between md:items-center"
+		>
+			<Editor />
+			<Share />
+		</div>
 	</Container>
 	<hr class="border-black mb-8" />
 	<Container>
 		<div class="mt-6">
-			<img src="/img/img-new-01-mobile.jpg" alt="image 01" />
-			<h2 class="text-2xl font-semibold mt-6">
-				People are dying of hunger... there’s no water’
-			</h2>
-			<div>
-				<p class="my-6 font-normal text-lg text-justify">
-					In Somalia, more than 6 million people are in need of food
-					assistance – more than half the population. But even inside
-					the camps, food is scarce.
-				</p>
+			<div class="w-full h-full">
+				<picture>
+					<source
+						media="(min-width: 1024px)"
+						srcset="/img/img-new-01-desktop.png"
+					/>
+					<img
+						src="/img/img-new-01-mobile.jpg"
+						alt="image 01"
+						class="sm:mx-auto w-full h-auto"
+					/>
+				</picture>
+			</div>
+			<div class="lg:flex lg:my-7">
+				<h2
+					class="text-2xl font-semibold mt-6 sm:text-center lg:flex-1"
+				>
+					People are dying of hunger... there’s no water’
+				</h2>
+				<div class="lg:flex-1">
+					<p class="my-6 font-normal text-lg text-justify">
+						In Somalia, more than 6 million people are in need of
+						food assistance – more than half the population. But
+						even inside the camps, food is scarce.
+					</p>
+				</div>
 			</div>
 		</div>
-		<hr class="border-black my-12" />
-		<div class="mt-6">
-			<img src="/img/img-new-02-mobile.jpg" alt="image 02" />
-			<h2 class="text-2xl font-semibold mt-6">
-				Let’s help them. I know you can
-			</h2>
-			<div>
-				<p class="my-6 font-normal text-lg text-justify">
-					Girls, boys and families are experiencing food insecurity,
-					higher food and other commodity prices coupled with a
-					decrease in remittances, strained public services and
-					significant protection challenges.
-				</p>
-				<p class="my-6 font-normal text-lg text-justify">
-					UNICEF appeals for US$177 million to provide humanitarian
-					services to 1.3 million people, including 826,000 children
-					in Somalia.
-				</p>
+		<hr class="border-black my-12 lg:hidden" />
+		<div class="mt-6 lg:flex gap-x-10">
+			<img
+				src="/img/img-new-02-mobile.jpg"
+				alt="image 02"
+				class="sm:mx-auto flex-1 w-full h-auto max-w-[480px] max-h-[430px]"
+			/>
+			<div class="flex-1 lg:flex lg:flex-col lg:justify-between">
+				<hr class="border-black my-12 hidden lg:my-0 lg:block" />
+				<h2 class="text-2xl font-semibold mt-6 sm:text-center">
+					Let’s help them. I know you can
+				</h2>
+				<div>
+					<p class="my-6 font-normal text-lg text-justify">
+						Girls, boys and families are experiencing food
+						insecurity, higher food and other commodity prices
+						coupled with a decrease in remittances, strained public
+						services and significant protection challenges.
+					</p>
+					<p class="my-6 font-normal text-lg text-justify">
+						UNICEF appeals for US$177 million to provide
+						humanitarian services to 1.3 million people, including
+						826,000 children in Somalia.
+					</p>
+				</div>
+				<hr class="border-black my-12 hidden lg:block lg:my-0" />
 			</div>
 		</div>
-		<hr class="border-black my-12" />
-		<div class="my-6">
-			<img src="/img/img-new-03-mobile.jpg" alt="image 03" />
-			<h2 class="text-2xl font-semibold mt-6">Still ‘neglected’</h2>
-			<div>
-				<p class="my-6 font-normal text-lg text-justify">
-					“The situation is critical in Somalia. People are dying of
-					hunger and there is no water,” said Mogadishu resident Noor
-					Ibrahim, who fled his home to seek help at a camp.
-				</p>
-
-				<p class="my-6 font-normal text-lg text-justify">
-					“Al-Shabaab blocks the roads, there is no access for food
-					aid, the Shabaab steal food as well.
-				</p>
+		<!-- <hr class="border-black my-12" /> -->
+		<div class="my-28 lg:flex gap-x-10">
+			<img
+				src="/img/img-new-03-mobile.jpg"
+				alt="image 03"
+				class="sm:mx-auto order-2 w-full h-auto lex-1 max-w-[480px] max-h-[430px]"
+			/>
+			<div class="flex-1 order-1 lg:flex lg:flex-col lg:justify-between">
+				<hr class="border-black hidden lg:block lg:my-0" />
+				<h2 class="text-2xl font-semibold mt-6 sm:text-center">
+					Still ‘neglected’
+				</h2>
+				<div>
+					<p class="my-6 font-normal text-lg text-justify">
+						“The situation is critical in Somalia. People are dying
+						of hunger and there is no water,” said Mogadishu
+						resident Noor Ibrahim, who fled his home to seek help at
+						a camp.
+					</p>
+					<p class="my-6 font-normal text-lg text-justify">
+						“Al-Shabaab blocks the roads, there is no access for
+						food aid, the Shabaab steal food as well.
+					</p>
+				</div>
+				<hr class="border-black hidden lg:block lg:my-0" />
 			</div>
 		</div>
 		<hr class="border-black my-12" />
 	</Container>
 
 	<div>
-		<img src="/img/img-video.jpg" alt="video" />
+		<picture>
+			<source
+				media="(min-width: 430px)"
+				srcset="/img/img-video-desktop.jpg"
+			/>
+			<img src="/img/img-video.jpg" alt="video" class="mx-auto w-full" />
+		</picture>
 		<Container>
-			<span class="block text-center font-bold text-4xl">“</span>
-			<h2 class="text-2xl text-center font-semibold mt-6">
-				We didn’t eat this morning, we haven’t had a meal in ten days.
-				We are still waiting for food.
-			</h2>
-			<p class="my-6 font-normal text-lg text-center">
-				The past days have been cruel on Fatumata and her two young
-				children – forced to walk over 100 miles in search of food,
-				water and sanctuary.
-			</p>
-			<p class="my-6 font-normal text-lg text-center">
-				Her three-year-old daughter Shankaron sits on her lap, eyes
-				blank and scared. It is a look that is far too common in these
-				parts.
-			</p>
+			<div class="max-w-760px mx-auto">
+				<span class="block text-center font-bold text-4xl">“</span>
+				<h2 class="text-2xl text-center font-semibold mt-6">
+					We didn’t eat this morning, we haven’t had a meal in ten
+					days. We are still waiting for food.
+				</h2>
+				<p class="my-6 font-normal text-lg text-center">
+					The past days have been cruel on Fatumata and her two young
+					children – forced to walk over 100 miles in search of food,
+					water and sanctuary.
+				</p>
+				<p class="my-6 font-normal text-lg text-center">
+					Her three-year-old daughter Shankaron sits on her lap, eyes
+					blank and scared. It is a look that is far too common in
+					these parts.
+				</p>
+			</div>
 		</Container>
 	</div>
 
 	<div class="bg-card-news text-white mt-24">
-		<h2 class="ml-5 py-4 text-[66px] font-semibold">Related</h2>
-		<hr class="border-cus_gray" />
-		<img class="mt-32" src="/img/earth.jpg" alt="" />
-		<Container>
-			<span class="text-base font-normal uppercase block mt-6">World</span>
-			<h3 class="text-[28px] font-semibold text-left mt-5 mb-6">
-				New images show intriguing Perseverance discovery on Mars
-			</h3>
-			<p>
-				Scientists identified mysterious diamonds that likely originated
-				from a dwarf planet that once existed in our solar system.
-			</p>
-			<div class="mt-8 flex justify-between">
-				<span>Continue Reading</span>
-				<ArrowRight />
+		<div class="flex items-center justify-between lg:h-56 lg:max-w-[1200px] mx-auto">
+			<h2 class="ml-5 lg:ml-0 py-4 text-[66px] lg:text-8xl font-semibold">
+				Related
+			</h2>
+			<button
+				class="hidden lg:block my-6 px-12 py-4 text-2xl font-medium bg-white text-black"
+			>
+				See All</button
+			>
+		</div>
+		<hr class="border-cus_gray mb-8" />
+		<div class="block lg:flex gap-x-10 lg:max-w-[1200px] mx-auto">
+			<img class="mt-32 lg:mt-0 mx-auto flex-1" src="/img/earth.jpg" alt="" />
+			<div class="flex-1 mx-4 max-w-96 sm:block my-4 md:max-w-full lg:w-[1200px] ">
+					<span class="text-base font-normal uppercase block mt-6"
+						>World</span
+					>
+					<h3 class="text-[28px] font-semibold text-left mt-5 mb-6">
+						New images show intriguing Perseverance discovery on
+						Mars
+					</h3>
+					<p>
+						Scientists identified mysterious diamonds that likely
+						originated from a dwarf planet that once existed in our
+						solar system.
+					</p>
+					<div class="mt-8 flex justify-between">
+						<span>Continue Reading</span>
+						<ArrowRight />
+					</div>
 			</div>
-		</Container>
+		</div>
 
-		<hr class="border-cus_gray my-12" />
+		<hr class="border-cus_gray my-12 lg:mb-0" />
 
-		<Container>
-			<div>
-				<img src="/img/img-new-04.jpg" alt="" />
-				<h2 class="text-2xl font-semibold mt-6 mb-4">
-					What Ukraine texted to russian soldiers
-				</h2>
-				<p class="text-xl font-normal">
-					Authorities in the Russian-occupied areas of Ukraine that
-					held so-called referendums say...
-				</p>
-			</div>
-		</Container>
-
-		<hr class="border-cus_gray my-12" />
-
-		<Container>
-			<div>
-				<img src="/img/img-new-05.jpg" alt="" />
-				<h2 class="text-2xl font-semibold mt-6 mb-4">
-					Fighter jets escort Singapore Airlines plane after bomb hoax
-				</h2>
-				<p class="text-xl font-normal">
-					Two air force fighter jets escorted a Singapore Airlines
-					plane traveling...
-				</p>
-			</div>
-		</Container>
-
-		<hr class="border-cus_gray my-12" />
-		<Container>
-			<div>
-				<img src="/img/img-new-06.jpg" alt="" />
-				<h2 class="text-2xl font-semibold mt-6 mb-4">
-					Scientists are listening to glaciers to discover the secrets
-					of the oceans
-				</h2>
-				<p class="text-xl font-normal mb-[70px]">
-					Two air force fighter jets escorted a Singapore Airlines
-					plane traveling...
-				</p>
-			</div>
-		</Container>
-		<hr class="border-cus_gray" />
+		<div class="lg:flex">
+			<Container>
+				<div>
+					<img src="/img/img-new-04.jpg" alt="" class="mx-auto" />
+					<h2 class="text-2xl font-semibold mt-6 mb-4">
+						What Ukraine texted to russian soldiers
+					</h2>
+					<p class="text-xl font-normal">
+						Authorities in the Russian-occupied areas of Ukraine that
+						held so-called referendums say...
+					</p>
+				</div>
+			</Container>
+			<div class="border-cus_gray border hidden lg:block"></div>
+			<hr class="border-cus_gray my-12 lg:hidden" />
+	
+			<Container>
+				<div>
+					<img src="/img/img-new-05.jpg" alt="" class="mx-auto" />
+					<h2 class="text-2xl font-semibold mt-6 mb-4">
+						Fighter jets escort Singapore Airlines plane after bomb hoax
+					</h2>
+					<p class="text-xl font-normal">
+						Two air force fighter jets escorted a Singapore Airlines
+						plane traveling...
+					</p>
+				</div>
+			</Container>
+			<div class="border-cus_gray border hidden lg:block"></div>
+			<hr class="border-cus_gray my-12 lg:hidden" />
+			<Container>
+				<div>
+					<img src="/img/img-new-06.jpg" alt="" class="mx-auto" />
+					<h2 class="text-2xl font-semibold mt-6 mb-4">
+						Scientists are listening to glaciers to discover the secrets
+						of the oceans
+					</h2>
+					<p class="text-xl font-normal mb-[70px]">
+						Two air force fighter jets escorted a Singapore Airlines
+						plane traveling...
+					</p>
+				</div>
+			</Container>
+		</div>
+		<hr class="border-cus_gray pb-10" />
 		<Container>
 			<button
-				class="my-6 px-8 py-4 text-xl font-medium bg-white text-black w-full"
+				class="lg:hidden my-6 px-8 py-4 text-xl font-medium bg-white text-black w-full"
 			>
 				See All</button
 			>
@@ -172,141 +235,152 @@ import Tiktok from "@components/icons/Tiktok.astro";
 	</div>
 	<div class="mt-16 mb-[88px]">
 		<Container>
-			<h3 class="text-[28px] text-center font-semibold mt-16 mb-5">
-				Subscribe to our newsletter
-			</h3>
-			<p class="text-lg font-normal text-center mb-8">
-				Be the first to know about the biggest stories as they break
-			</p>
-			<input
-				type="email"
-				placeholder="Email address"
-				class="px-5 py-4 mb-3 w-full text-lg border border-black"
-			/>
-			<button
-				class="py-[14px] px-5 w-full text-lg font-medium bg-black text-white"
-				>Subscribe</button
-			>
-			<p class="mt-6 text-sm font-normal text-center">
-				By clicking Subscribe, you indicate that you agree to Hypnosis
-				Terms and Conditions and Data Use Privacy Policy
-			</p>
+			<section class="max-w-[750px] mx-auto">
+				<h3 class="text-[28px] text-center font-semibold mt-16 mb-5">
+					Subscribe to our newsletter
+				</h3>
+				<p class="text-lg font-normal text-center mb-8">
+					Be the first to know about the biggest stories as they break
+				</p>
+				<div class="lg:border lg:border-black lg:flex items-center p-1">
+					<input
+						type="email"
+						placeholder="Email address"
+						class="px-5 py-4 mb-3 lg:mb-0 w-full text-lg border border-black lg:border-none"
+					/>
+					<button
+						class="py-[14px] px-5 w-full text-lg font-medium bg-black text-white"
+						>Subscribe</button
+					>
+				</div>
+				<p class="mt-6 text-sm font-normal text-center">
+					By clicking Subscribe, you indicate that you agree to Hypnosis
+					Terms and Conditions and Data Use Privacy Policy
+				</p>
+			</section>
 		</Container>
 	</div>
 
 	<footer class="bg-footer py-10">
 		<Container>
-			<div class="flex gap-x-[76px]">
-				<div>
-					<h4 class="text-lg font-bold mb-4">World</h4>
-					<ul>
-						<li class="leading-8">Africa</li>
-						<li class="leading-8">Americas</li>
-						<li class="leading-8">Asia</li>
-						<li class="leading-8">Australia</li>
-						<li class="leading-8">China</li>
-						<li class="leading-8">Europe</li>
-						<li class="leading-8">India</li>
-						<li class="leading-8">Middle East</li>
-					</ul>
+			<div class="lg:flex justify-between">
+
+				<div class="flex gap-x-[76px] lg:gap-x-28">
+					<div>
+						<h4 class="text-lg font-bold mb-4">World</h4>
+						<ul>
+							<li class="leading-8">Africa</li>
+							<li class="leading-8">Americas</li>
+							<li class="leading-8">Asia</li>
+							<li class="leading-8">Australia</li>
+							<li class="leading-8">China</li>
+							<li class="leading-8">Europe</li>
+							<li class="leading-8">India</li>
+							<li class="leading-8">Middle East</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-lg font-bold mb-4">Politics</h4>
+						<ul>
+							<li class="leading-8">Ukraine</li>
+							<li class="leading-8">Europe</li>
+							<li class="leading-8">Facts First</li>
+							<li class="leading-8">2022 Midterms</li>
+						</ul>
+					</div>
 				</div>
-				<div>
-					<h4 class="text-lg font-bold mb-4">Politics</h4>
-					<ul>
-						<li class="leading-8">Ukraine</li>
-						<li class="leading-8">Europe</li>
-						<li class="leading-8">Facts First</li>
-						<li class="leading-8">2022 Midterms</li>
-					</ul>
+	
+				<hr class="border-black my-8 lg:hidden" />
+	
+				<div class="flex gap-x-[76px] lg:gap-x-28">
+					<div>
+						<h4 class="text-lg font-bold mb-4">Business</h4>
+						<ul>
+							<li class="leading-8">Markets</li>
+							<li class="leading-8">Tech</li>
+							<li class="leading-8">Media</li>
+							<li class="leading-8">Success</li>
+							<li class="leading-8">Perspectives</li>
+							<li class="leading-8">Videos</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-lg font-bold mb-4">Tech</h4>
+						<ul>
+							<li class="leading-8">Innovate</li>
+							<li class="leading-8">Gadget</li>
+							<li class="leading-8">Foreseeable Future</li>
+							<li class="leading-8">Mission: Ahead</li>
+							<li class="leading-8">Upstarts</li>
+							<li class="leading-8">Work Transformed</li>
+							<li class="leading-8">Innovative Cities</li>
+						</ul>
+					</div>
+				</div>
+	
+				<hr class="border-black my-8 lg:hidden" />
+				<div class="flex gap-x-[76px] lg:gap-x-28">
+					<div>
+						<h4 class="text-lg font-bold mb-4">Sports</h4>
+						<ul>
+							<li class="leading-8">Football</li>
+							<li class="leading-8">Tennis</li>
+							<li class="leading-8">Golf</li>
+							<li class="leading-8">Olympics</li>
+							<li class="leading-8">US Sports</li>
+							<li class="leading-8">Climbing</li>
+							<li class="leading-8">Motorsport</li>
+							<li class="leading-8">Esports</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="text-lg font-bold mb-4">Culture</h4>
+						<ul>
+							<li class="leading-8">Arts</li>
+							<li class="leading-8">Design</li>
+							<li class="leading-8">Fashion</li>
+							<li class="leading-8">Architecture</li>
+							<li class="leading-8">Luxury</li>
+							<li class="leading-8">Beauty</li>
+							<li class="leading-8">Video</li>
+						</ul>
+					</div>
 				</div>
 			</div>
-
 			<hr class="border-black my-8" />
-
-			<div class="flex gap-x-[76px]">
+			<div class="flex items-center justify-between">
 				<div>
-					<h4 class="text-lg font-bold mb-4">Business</h4>
-					<ul>
-						<li class="leading-8">Markets</li>
-						<li class="leading-8">Tech</li>
-						<li class="leading-8">Media</li>
-						<li class="leading-8">Success</li>
-						<li class="leading-8">Perspectives</li>
-						<li class="leading-8">Videos</li>
-					</ul>
+					<h3 class="text-2xl font-semibold text-center mb-4 lg:text-left">
+						Hypnosis
+					</h3>
+					<p class="text-sm font-normal text-center text-gray-light">
+						© 2022 Hypnosis Corporation Inc. All rights reserved.
+					</p>
 				</div>
-				<div>
-					<h4 class="text-lg font-bold mb-4">Tech</h4>
-					<ul>
-						<li class="leading-8">Innovate</li>
-						<li class="leading-8">Gadget</li>
-						<li class="leading-8">Foreseeable Future</li>
-						<li class="leading-8">Mission: Ahead</li>
-						<li class="leading-8">Upstarts</li>
-						<li class="leading-8">Work Transformed</li>
-						<li class="leading-8">Innovative Cities</li>
-					</ul>
-				</div>
-			</div>
-
-			<hr class="border-black my-8" />
-			<div class="flex gap-x-[76px]">
-				<div>
-					<h4 class="text-lg font-bold mb-4">Sports</h4>
-					<ul>
-						<li class="leading-8">Football</li>
-						<li class="leading-8">Tennis</li>
-						<li class="leading-8">Golf</li>
-						<li class="leading-8">Olympics</li>
-						<li class="leading-8">US Sports</li>
-						<li class="leading-8">Climbing</li>
-						<li class="leading-8">Motorsport</li>
-						<li class="leading-8">Esports</li>
-					</ul>
-				</div>
-				<div>
-					<h4 class="text-lg font-bold mb-4">Culture</h4>
-					<ul>
-						<li class="leading-8">Arts</li>
-						<li class="leading-8">Design</li>
-						<li class="leading-8">Fashion</li>
-						<li class="leading-8">Architecture</li>
-						<li class="leading-8">Luxury</li>
-						<li class="leading-8">Beauty</li>
-						<li class="leading-8">Video</li>
-					</ul>
-				</div>
-			</div>
-			<hr class="border-black my-8" />
-			<div>
-				<h3 class="text-2xl font-semibold text-center mb-4">
-					Hypnosis
-				</h3>
-				<p class="text-sm font-normal text-center">
-					© 2022 Hypnosis Corporation Inc. All rights reserved.
-				</p>
-				<div
-					class="flex items-center gap-x-7 w-[200px] mx-auto mt-9 mb-7"
-				>
-					<div class="w-7">
-						<Facebook />
+				<div class="lg:flex lg:flex-col lg:gap-y-5 lg:items-end">
+					<div
+						class="flex items-center gap-x-7 w-[200px] mx-auto mt-9 mb-7 lg:m-0"
+					>
+						<div class="w-7">
+							<Facebook />
+						</div>
+						<div class="w-7">
+							<Twitter />
+						</div>
+						<div class="w-7">
+							<Youtube />
+						</div>
+						<div class="w-7">
+							<Tiktok />
+						</div>
 					</div>
-					<div class="w-7">
-						<Twitter />
+					<div class="flex gap-x-3 flex-wrap justify-center w-full">
+						<span>Terms & Conditions</span>
+						<span>Cookies</span>
+						<span>Ads</span>
+						<span>About us</span>
+						<span>Join our team</span>
 					</div>
-					<div class="w-7">
-						<Youtube />
-					</div>
-					<div class="w-7">
-						<Tiktok />
-					</div>
-				</div>
-				<div class="flex gap-x-3 flex-wrap justify-center w-full">
-					<span>Terms & Conditions</span>
-					<span>Cookies</span>
-					<span>Ads</span>
-					<span>About us</span>
-					<span>Join our team</span>
 				</div>
 			</div>
 		</Container>
